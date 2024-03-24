@@ -1,5 +1,8 @@
+package recipe;
+
+import ingredient.Ingredient;
+
 import java.util.HashMap;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Map;
 

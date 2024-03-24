@@ -1,4 +1,5 @@
-import java.io.Serializable;
+package ingredient;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
