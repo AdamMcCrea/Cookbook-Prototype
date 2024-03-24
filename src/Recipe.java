@@ -5,4 +5,15 @@ public class Recipe {
     private List<Ingredient> ingredientList;
     private float totalPrice;
 
+    public String getImageFilepath() {
+        return imageFilepath;
+    }
+
+    public List<Ingredient> getIngredientList() {
+        return ingredientList;
+    }
+
+    public float getTotalPrice() {
+        return totalPrice;
+    }
 }
