@@ -6,6 +6,8 @@ public class Ingredient {
 
     private String name;
     private float pricePer;
+    //for shopping, true if ingredient can be bought individually e.g. a pepper, false if not e.g. milk
+    private boolean finiteAmount;
 
     public String getName(){
         return this.name;
@@ -14,11 +16,12 @@ public class Ingredient {
     public float getPrice(){
         return this.pricePer;
     }
-    private Ingredient(String name, float pricePer){
+    private Ingredient(String name, float pricePer, boolean finiteAmount){
         this.name = name;
         this.pricePer = pricePer;
+        this.finiteAmount = finiteAmount;
     }
-    public Ingredient getInstance(String name, float pricePer){
+    public Ingredient getInstance(String name, float pricePer, boolean finiteAmount){
         try{
             //making sure name in correct format
             String nameRegex = "^[a-zA-Z ]+$";
@@ -41,7 +44,7 @@ public class Ingredient {
                 throw new IllegalArgumentException("price either negative, 0 or excessive");
             }
 
-            return new Ingredient(name, pricePer);
+            return new Ingredient(name, pricePer, finiteAmount);
         }catch (IllegalArgumentException e){
             throw new IllegalArgumentException(e.getMessage());
         }
