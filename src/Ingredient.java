@@ -28,11 +28,22 @@ public class Ingredient {
             if(!nameMatcher.matches()){
                 throw new IllegalArgumentException("name in wrong format");
             }
-            //making sure price positive and not excessive
+            //making sure price positive and not excessive and in right format
+            String priceString = String.valueOf(pricePer);
+            String priceRegex = "^\\d+\\.\\d{2}$";
+            Pattern pricePattern = Pattern.compile(priceRegex);
+            Matcher priceMatcher = pricePattern.matcher(priceString);
+
+            if(!priceMatcher.matches()){
+                throw new IllegalArgumentException("price not to 2dp");
+            }
             if(pricePer <= 0 || pricePer > 15){
                 throw new IllegalArgumentException("price either negative, 0 or excessive");
             }
 
+            return new Ingredient(name, pricePer);
+        }catch (IllegalArgumentException e){
+            throw new IllegalArgumentException(e.getMessage());
         }
     }
 }
