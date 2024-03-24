@@ -38,7 +38,7 @@ public class Recipe {
             amountOfIngredients.put(ingredient, amount);
         }
     }
-    public Recipe getInstance(String name, String imageFilepath, List<Ingredient> ingredientList, List<Double> amounts){
+    public static Recipe getInstance(String name, String imageFilepath, List<Ingredient> ingredientList, List<Double> amounts){
         try{
             //making sure name only contains letters
             String nameRegex = "^[a-zA-Z]+$";

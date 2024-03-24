@@ -29,7 +29,7 @@ public class Ingredient {
         this.finiteAmount = finiteAmount;
         this.type = type;
     }
-    public Ingredient getInstance(String name, float pricePer, boolean finiteAmount, double amount, MeasurementType type){
+    public static Ingredient getInstance(String name, float pricePer, boolean finiteAmount, double amount, MeasurementType type){
         try{
             //making sure name in correct format
             String nameRegex = "^[a-zA-Z ]+$";
@@ -70,7 +70,7 @@ public class Ingredient {
      * @param number - number being checked
      * @return true if number int, 1dp or 2dp, false if not
      */
-    private boolean checkDPFormat(double number){
+    private static boolean checkDPFormat(double number){
         String numStr = String.valueOf(number);
         if(numStr.contains(".")){
             return true;
