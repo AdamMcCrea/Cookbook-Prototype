@@ -2,6 +2,7 @@ package ingredient;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import util.MeasurementType;
 
 public class Ingredient {
 
@@ -11,15 +12,6 @@ public class Ingredient {
     private boolean finiteAmount;
     private MeasurementType type;
 
-    private enum MeasurementType{
-        GRAMS,
-        TSP,
-        TBSP,
-        ML,
-        COUNT,
-        CLOVE
-
-    }
     public String getName(){
         return this.name;
     }
