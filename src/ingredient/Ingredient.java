@@ -81,4 +81,7 @@ public class Ingredient {
         }
         else return false;
     }
+    public String toString(){
+        return "" + this.amount + this.type + this.name;
+    }
 }
