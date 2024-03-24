@@ -1,5 +1,6 @@
 package ingredient;
 
+import java.util.InputMismatchException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import util.MeasurementType;
@@ -53,6 +54,8 @@ public class Ingredient {
             return new Ingredient(name, pricePer, finiteAmount, type);
         }catch (IllegalArgumentException e){
             throw new IllegalArgumentException(e.getMessage());
+        }catch (InputMismatchException e){
+            throw new InputMismatchException("Incorrect type entered");
         }
     }
 }
