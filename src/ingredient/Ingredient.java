@@ -1,6 +1,7 @@
 package ingredient;
 
 import java.util.InputMismatchException;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import util.MeasurementType;
@@ -23,6 +24,10 @@ public class Ingredient {
     public MeasurementType getType(){
         return this.type;
     }
+    public boolean getFiniteAmount(){ return this.finiteAmount; }
+
+    public double getAmount() { return amount; }
+
     private Ingredient(String name, float pricePer, boolean finiteAmount, double amount, MeasurementType type){
         this.name = name;
         this.pricePer = pricePer;
@@ -83,5 +88,17 @@ public class Ingredient {
     }
     public String toString(){
         return "" + this.amount + this.type + this.name;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj == null){
+            return false;
+        }
+        if(!(obj instanceof Ingredient)){
+            return false;
+        }
+        Ingredient other = (Ingredient) obj;
+        return this.name == other.name;
     }
 }
