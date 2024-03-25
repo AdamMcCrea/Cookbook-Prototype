@@ -50,6 +50,9 @@ public class User {
             }
         }
         return shoppingList;
+    }
+
+    public void generateFiles(){
 
     }
 }
